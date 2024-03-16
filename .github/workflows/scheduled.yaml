@@ -1,6 +1,7 @@
 name: "Monthly Job"
 
 on:
+  workflow_dispatch:
   schedule:
     # 毎月10日の9時に実行
     - cron: "0 9 10 * *"
