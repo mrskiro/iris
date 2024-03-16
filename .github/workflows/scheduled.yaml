@@ -16,12 +16,14 @@ jobs:
         with:
           node-version: "20"
       - name: Install dependencies
-        run: yarn install
+        run: yarn --frozen-lockfile
+      - name: Install Playwright
+        run: npx playwright install --with-deps
       - name: Build
         run: yarn build
       - name: Run script
+        run: node dist/index.js
         env:
           EMAIL: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
           LINE_ACCESS_TOKEN: ${{ secrets.LINE_ACCESS_TOKEN }}
-        run: node dist/index.js
