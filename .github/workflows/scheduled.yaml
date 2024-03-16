@@ -24,4 +24,4 @@ jobs:
       - name: Build
         run: yarn build
       - name: Run script
-        run: node dist/index.js
+        run: node --env-file=.env dist/index.js
