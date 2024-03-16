@@ -19,6 +19,8 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
+      - name: Test
+        run: echo ${{ secrets.EMAIL }}
       - name: Run script
         env:
           EMAIL: ${{ secrets.EMAIL }}
