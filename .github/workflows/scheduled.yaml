@@ -20,8 +20,15 @@ jobs:
         with:
           node-version: "20"
       - name: Install dependencies
-        run: yarn install
+        run: yarn --frozen-lockfile
+      - name: T
+        run: echo "$EMAIL"
+      - name: TT
+        run: |
+          touch .env
+          echo EMAIL=${{ secrets.EMAIL }} >> .env
+          cat .env
       - name: Build
         run: yarn build
       - name: Run script
-        run: node --env-file=.env dist/index.js
+        run: node dist/index.js
