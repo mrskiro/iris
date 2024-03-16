@@ -1,0 +1,24 @@
+{
+	"name": "iris",
+	"version": "1.0.0",
+	"author": "mrskiro <mrskiro.h@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"start": "tsx --env-file=.env index.ts",
+		"build": "tsc",
+		"lint": "biome check .",
+		"lint:fix": "biome check --apply-unsafe ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.6.1",
+		"@types/node": "20.11.28",
+		"tsx": "4.7.1",
+		"typescript": "5.4.2"
+	},
+	"dependencies": {
+		"playwright": "1.42.1"
+	},
+	"engines": {
+		"node": ">=20.6.0"
+	}
+}
