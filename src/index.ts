@@ -12,7 +12,7 @@ const date = (() => {
 })();
 
 (async () => {
-	console.log(process.env.EMAIL);
+	console.log("EMAIL", process.env.EMAIL);
 	if (
 		!process.env.EMAIL ||
 		!process.env.PASSWORD ||
