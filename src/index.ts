@@ -6,7 +6,12 @@ import { chromium } from "playwright";
 const date = (() => {
 	const [month] = process.argv.slice(2);
 	if (!month) {
-		return new Date().toISOString().slice(0, 7).replace(/-/g, "");
+		const currentDate = new Date();
+		const year = currentDate.getFullYear();
+		const month = currentDate.getMonth() + 1;
+		// zaimの連携ラグの関係上次月に実行される想定なので、前月のデータを取得している
+		const prevMonth = month === 1 ? 12 : month - 1;
+		return `${year}${prevMonth.toString().padStart(2, "0")}`
 	}
 	return month.split("=")[1];
 })();
